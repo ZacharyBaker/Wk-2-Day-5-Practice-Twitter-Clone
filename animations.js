@@ -19,10 +19,16 @@ $(document).ready(function(){
 	
 	
 	
+	
 	$('#notReply').keydown(function() {
-			var userTweet = $('#notReply').val().length;
-			console.log(userTweet);
-			$('#char-count').text(140 - userTweet);
+				var userTweet = $('#notReply').val().length;
+			if (userTweet <= 140){
+				$('#char-count').text(140 - userTweet);
+				//use a while loop for the userTweet length being 10 or less.
+			if (userTweet >= 130){
+				$('#char-count').css('color', 'red');
+			}
+		} 
 	});
 	
 	
