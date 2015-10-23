@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+
+
+
+
 	$('#tweet-submit').hide();
 	$('#char-count').hide();
 
@@ -15,11 +19,11 @@ $(document).ready(function () {
 
 	});
 
-	$('.tweet-compose').on('blur', function () {
-		$('#tweet-submit').hide();
-		$('#char-count').hide();
-		$('.tweet-compose').css('height', '2.5em');
-	});
+	// $('.tweet-compose').on('blur', function () {
+	// 	$('#tweet-submit').hide();
+	// 	$('#char-count').hide();
+	// 	$('.tweet-compose').css('height', '2.5em');
+	// });
 
 
 
@@ -46,6 +50,42 @@ $(document).ready(function () {
 		}
 
 	});
+
+	//------------------------------------------------------
+	$('#tweet-submit').on('click', function () {
+		var $tweetOutline = $('#stream').children('.tweet:first');
+		var $newTweet = $tweetOutline.clone();
+		var $newTweetText = $('#notReply').val();
+		
+		
+		$newTweet.find('.avatar').prop('src', 'img/alagoon.jpg');
+		$newTweet.find('.fullname').text('Zachary MF Binks');
+		$newTweet.find('.username').text('@MurmuringGinger');
+		$newTweet.find('.tweet-text').html($newTweetText);
+
+
+
+		$('#stream').prepend($newTweet);
+		
+
+
+
+	});
+	//----------------------------------------------------------------
+
+	$('.tweet-actions').hide();
+	
+	
+	$('.tweet').on('mouseenter', function(){
+		// alert("hovering motha effa");
+		$(this).find('.tweet-actions').show();
+	})
+
+	$('.tweet').on('mouseleave', function(){
+		// alert("hovering motha effa");
+		$(this).find('.tweet-actions').hide();
+	})
+
 
 
 
