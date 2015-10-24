@@ -87,7 +87,14 @@ $(document).ready(function () {
 	})
 
 
+//div class="slidingwrapper" is the hook for the sliding elements
 
+	$('.slidingwrapper').hide();
+
+
+	$('body').on('click', '.tweet', function(){
+		$(this).find('.slidingwrapper').slideToggle('slow');
+	})
 
 });
 
