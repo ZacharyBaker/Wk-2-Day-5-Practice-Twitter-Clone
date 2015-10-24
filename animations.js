@@ -76,12 +76,12 @@ $(document).ready(function () {
 	$('.tweet-actions').hide();
 	
 	
-	$('.tweet').on('mouseenter', function(){
+	$('body').on('mouseenter', '.tweet', function(){
 		// alert("hovering motha effa");
 		$(this).find('.tweet-actions').show();
 	})
 
-	$('.tweet').on('mouseleave', function(){
+	$('body').on('mouseleave', '.tweet', function(){
 		// alert("hovering motha effa");
 		$(this).find('.tweet-actions').hide();
 	})
@@ -90,3 +90,4 @@ $(document).ready(function () {
 
 
 });
+
